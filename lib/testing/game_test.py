@@ -41,10 +41,10 @@ class TestGame:
         result_2 = Result(player, game, 3500)
         result_3 = Result(player, game_2, 19)
 
-        assert (len(game.results()) == 2)
-        assert (result_1 in game.results())
-        assert (result_2 in game.results())
-        assert (not result_3 in game.results())
+        assert (len(game.results) == 2)
+        assert (result_1 in game.results)
+        assert (result_2 in game.results)
+        assert (not result_3 in game.results)
 
     def test_results_of_type_result(self):
         '''game results are of type Result'''
@@ -53,8 +53,8 @@ class TestGame:
         Result(player, game, 2000)
         Result(player, game, 3500)
 
-        assert (isinstance(game.results()[0], Result))
-        assert (isinstance(game.results()[1], Result))
+        assert (isinstance(game.results[0], Result))
+        assert (isinstance(game.results[1], Result))
 
     def test_has_many_players(self):
         '''game has many players.'''
@@ -65,8 +65,8 @@ class TestGame:
         Result(player, game, 5000)
         Result(player_2, game, 4999)
 
-        assert (player in game.players())
-        assert (player_2 in game.players())
+        assert (player in game.get_players())
+        assert (player_2 in game.get_players())
 
     def test_players_of_type_player(self):
         '''game players are of type player'''
@@ -76,8 +76,8 @@ class TestGame:
         Result(player, game, 5000)
         Result(player_2, game, 4999)
 
-        assert (isinstance(game.players()[0], Player))
-        assert (isinstance(game.players()[1], Player))
+        assert (isinstance(game.get_players()[0], Player))
+        assert (isinstance(game.get_players()[1], Player))
 
     def test_average_score(self):
         '''test average_score()'''

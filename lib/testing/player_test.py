@@ -43,10 +43,10 @@ class TestPlayer:
         result_2 = Result(player, game, 3500)
         result_3 = Result(player_2, game, 190)
 
-        assert (len(player.results()) == 2)
-        assert (result_1 in player.results())
-        assert (result_2 in player.results())
-        assert (not result_3 in player.results())
+        assert (len(player.results) == 2)
+        assert (result_1 in player.results)
+        assert (result_2 in player.results)
+        assert (not result_3 in player.results)
 
     def test_results_of_type_result(self):
         '''player results are of type Result'''
@@ -55,8 +55,8 @@ class TestPlayer:
         Result(player, game, 2000)
         Result(player, game, 3500)
 
-        assert (isinstance(player.results()[0], Result))
-        assert (isinstance(player.results()[1], Result))
+        assert (isinstance(player.results[0], Result))
+        assert (isinstance(player.results[1], Result))
 
     def test_has_many_players(self):
         '''Player has many games played.'''
@@ -95,10 +95,10 @@ class TestPlayer:
         Result(player, game_2, 3500)
         Result(player_2, game, 190)
 
-        assert (player.played_game(game) == True)
-        assert (player.played_game(game_2) == True)
-        assert (player_2.played_game(game) == True)
-        assert (player_2.played_game(game_2) == False)
+        assert (player.has_played_game(game) == True)
+        assert (player.has_played_game(game_2) == True)
+        assert (player_2.has_played_game(game) == True)
+        assert (player_2.has_played_game(game_2) == False)
 
     def test_has_num_times_played(self):
         '''how many times has the player played the game'''

@@ -116,20 +116,19 @@ build out any helper methods if needed.
 
 #### Game
 
-- `Game players(self)`
-  - Returns a list of `Result` instances associated with the `Player` instance.
+- `Game get_players(self)`
+  - Returns a list of `Player` instances associated with the `Game` instance.
 
 ### Aggregate and Association Methods
 
 #### Player
 
-- `Player played_game(self, game)`
+- `Player has_played_game(self, game)`
   - Returns `True` if the `Player` has played this `Game` (if there is a
     `Result` instance that has this `Player` and `Game`), returns `False`
     otherwise
 - `Player num_times_played(self, game)`
-  - Returns the number of times the `Player` instance has played (`Result`
-    instance created) the `Game` instance
+  - Returns the number of times the `Player` instance has the `Game` instance
 
 #### Game
 
@@ -138,11 +137,3 @@ build out any helper methods if needed.
   - To average scores, add all result scores together for the player and divide
     by the total number of results for the player.
 
-#### Bonus: Aggregate and Association Method
-
-- `Player classmethod highest_scored(cls, game)`
-  - Returns the `Player` instance with the highest average game score.
-  - Returns `None` if there are no players.
-  - _hint: will need a way to remember all `Player` objects_
-  - _hint: do you have a method to get the average score on a game for a
-    particular player?_

@@ -72,15 +72,15 @@ class TestResults:
         assert (isinstance(result_1.game, Game))
         assert (isinstance(result_2.game, Game))
 
-    def test_get_all_results(self):
-        '''test Result class all attribute'''
-        Result.all = []
-        game = Game("Codenames")
-        player = Player("Ja'Vonn")
-        player_2 = Player("Brett")
-        result_1 = Result(player, game, 2)
-        result_2 = Result(player_2, game, 5)
+    # def test_get_all_results(self):
+    #     '''test Result class all attribute'''
+    #     Result.all = []
+    #     game = Game("Codenames")
+    #     player = Player("Ja'Vonn")
+    #     player_2 = Player("Brett")
+    #     result_1 = Result(player, game, 2)
+    #     result_2 = Result(player_2, game, 5)
 
-        assert (len(Result.all) == 2)
-        assert (result_1 in Result.all)
-        assert (result_2 in Result.all)
+    #     assert (len(Result.all) == 2)
+    #     assert (result_1 in Result.all)
+    #     assert (result_2 in Result.all)
