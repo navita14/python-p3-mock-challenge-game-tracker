@@ -8,25 +8,34 @@ class Game:
         return self._title
 
     @title.setter
-    def title(self, value):
-        if isinstance(value,str) and len(value) > 0:
-            self._title = value
+    def title(self, new_title):
+        if len(new_title) > 0:
+            self._title = new_title
         else:
-            raise Exception(f"not {value}")
+            raise ValueError(f"not {value}")
     
 
-    def get_players(self):
+    def get_players(self):  #player instances list
         new_players = []
         for result in self.results:
             new_players.append(result.player)
         return new_players
     
     def average_score(self, player):
+        # total = 0
+        # for result in self.results:
+        #     if result.player == player:
+        #         total = result.score + total
+        # return (total / len(self.results))
         total = 0
+        count = 0
         for result in self.results:
             if result.player == player:
-                total = result.score + total
-        return (total / len(self.results))
+                total += result.score
+                count += 1
+        return total / count
+
+
 
 
 # Game("Skribbl.io")
